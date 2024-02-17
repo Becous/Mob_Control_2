@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cont2</string>
+    <string name="image_1_title">Cat</string>
+    <string name="image_2_title">Linux</string>
+    <string name="image_3_title">Dog</string>
+
+    <string name="image_1_info">Cute cat</string>
+    <string name="image_2_info">Operation System Linux</string>
+    <string name="image_3_info">Cute dog</string>
 </resources>
