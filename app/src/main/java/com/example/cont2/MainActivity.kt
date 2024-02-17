@@ -88,7 +88,11 @@ fun MainWindow(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {
-        ImageInfo()
+        ImageInfo(
+            image = image,
+            textInfo = textInfo,
+            textTitle = textTitle,
+        )
         Spacer(modifier = Modifier.height(20.dp))
         Row(
             modifier = Modifier
@@ -119,11 +123,13 @@ fun MainWindow(modifier: Modifier = Modifier) {
     }
 }
 
+
+
 @Composable
 fun ImageInfo(
     @DrawableRes image: Int,
     @StringRes textInfo: Int,
-    @StringRes textTile: Int,
+    @StringRes textTitle: Int
 )
 {
     Column(
@@ -143,7 +149,7 @@ fun ImageInfo(
             modifier =  Modifier
         )
         Text(
-            text = stringResource(textTile),
+            text = stringResource(textTitle),
             fontSize = 16.sp,
             modifier =  Modifier
         )
