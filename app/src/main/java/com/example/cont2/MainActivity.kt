@@ -64,6 +64,23 @@ fun MainWindowPreview(){
 fun MainWindow(modifier: Modifier = Modifier) {
     var currentState by remember { mutableStateOf(1)    }
 
+    val image = when(currentState){
+        1 -> R.drawable.image_1
+        2 -> R.drawable.image_2
+        else -> R.drawable.image_3
+    }
+
+    val textInfo = when(currentState){
+        1 -> R.string.image_3_info
+        2 -> R.string.image_3_info
+        else -> R.string.image_3_info
+    }
+
+    val textTitle = when(currentState){
+        1 -> R.string.image_1_title
+        2 -> R.string.image_2_title
+        else -> R.string.image_3_title
+    }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
