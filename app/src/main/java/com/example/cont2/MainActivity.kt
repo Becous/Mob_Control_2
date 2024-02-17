@@ -80,13 +80,21 @@ fun MainWindow(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceBetween, // Змінено на SpaceBetween для рівномірного розподілу кнопок
         ) {
             Button(onClick = {
-
+                if (currentState == 2 || currentState == 3) {
+                    currentState -= 1
+                } else if (currentState == 1) {
+                    currentState = 3
+                }
             }) {
                 Text(text = "Previous")
             }
 
             Button(onClick = {
-
+                if (currentState == 1 || currentState == 2) {
+                    currentState += 1
+                } else if (currentState == 3) {
+                    currentState = 1
+                }
             }) {
                 Text(text = "Next")
             }
