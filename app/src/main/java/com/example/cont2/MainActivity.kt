@@ -3,6 +3,8 @@ package com.example.cont2
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -93,13 +95,17 @@ fun MainWindow(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ImageInfo()
+fun ImageInfo(
+    @DrawableRes image: Int,
+    @StringRes textInfo: Int,
+    @StringRes textTile: Int,
+)
 {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     )  {
         Image(
-            painter = painterResource(R.drawable.image_1),
+            painter = painterResource(image),
 
             contentDescription = null,
             modifier = Modifier
@@ -107,12 +113,12 @@ fun ImageInfo()
                 .size(height = 500.dp, width = 500.dp)
         )
         Text(
-            text = stringResource(R.string.image_1_title),
+            text = stringResource(textInfo),
             fontSize = 36.sp,
             modifier =  Modifier
         )
         Text(
-            text = stringResource(R.string.image_1_info),
+            text = stringResource(textTile),
             fontSize = 16.sp,
             modifier =  Modifier
         )
